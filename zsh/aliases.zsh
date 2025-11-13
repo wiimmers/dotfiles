@@ -1,6 +1,8 @@
-alias python3.9="python3"
-alias brewski='brew update && brew upgrade && brew cleanup'
-alias brewdir='cd /opt/homebrew/'
+alias python="python3.12"
+alias python3="python3.12"
+alias p="pnpm"
+alias pcb="p clean:build"
+alias pt="p tsc"
 alias docpipeline="cd ~/dpp/document-pipeline/"
 alias legdocpipeline="cd ~/dpp/legacy/doc-pipeline/"
 alias dpcommon="cd ~/dpp/document-pipeline/document-pipeline-common/"
@@ -20,9 +22,21 @@ alias pkg-indexing-svc="cd ~/dpp/document-pipeline/microservices/pkg-indexing-mo
 alias purge-svc="cd ~/dpp/document-pipeline/microservices/purge-svc/"
 alias translation-svc="cd ~/dpp/document-pipeline/microservices/translation-svc/"
 alias validation-svc="cd ~/dpp/document-pipeline/microservices/validation-svc/"
-alias lg="lazygit"
-alias activate="source ./.venv/bin/activate || source ./venv/bin/activate"
 alias legtest="dotnet test -c Development -e GOOGLE_APPLICATION_CREDENTIALS=/Users/wimmersn/qa-automation/dev-gccredmain.json"
+alias gcpdev="gcloud config set project docpipeline-dev-a8a5"
+alias gcpqa="gcloud config set project docpipeline-qa-eauz"
+
+eval "$(zoxide init zsh)"
+
+alias activate="source ./.venv/bin/activate 2>/dev/null || source ./venv/bin/activate 2>/dev/null"
+alias brewski='brew update && brew upgrade && brew cleanup'
+alias brewdir='cd /opt/homebrew/'
+alias cd="z"
+alias dotfiles="nvim ~/dotfiles"
+alias lg="lazygit"
+alias ls="eza --color=auto --group-directories-first --icons=auto -l"
+alias v="nvim"
+
 s3list() {
   local profile=$1
   local bucket="$(aws configure get profile.${profile}.bucket)"
@@ -43,3 +57,5 @@ s3rm() {
   local bucket="$(aws configure get profile.${profile}.bucket)"
   aws s3 rm  ${bucket}/${file_path} --profile ${profile}
 }
+
+

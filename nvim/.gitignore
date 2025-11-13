@@ -1,0 +1,68 @@
+# --------------------
+# macOS
+# --------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+.DS_Store?
+.apdisk
+
+# macOS specific dirs
+*.icloud
+*~.nib
+
+# --------------------
+# Neovim
+# --------------------
+# Swap files
+*.swp
+*.swo
+
+# Persistent undo/backup
+*.un~
+*.bak
+*.tmp
+
+# Session files
+Session.vim
+
+# Coc.nvim & LSP logs
+coc.nvim-data/
+.log/
+
+# Lua language servers (sumneko / lua-language-server)
+.luacheckrc
+lua-language-server/
+.luacov*
+lazy/
+
+# --------------------
+# Lua
+# --------------------
+# Compiled Lua
+*.luac
+
+# LuaRocks
+.rocks/
+*.rock
+*.rockspec
+luarocks*
+
+# Lua test coverage
+luacov.stats.out
+luacov.report.out
+
+# --------------------
+# Editor / Misc
+# --------------------
+# VSCode & JetBrains (just in case)
+.vscode/
+.idea/
+
+# Logs
+*.log

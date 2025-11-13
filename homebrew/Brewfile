@@ -1,0 +1,71 @@
+tap "isen-ng/dotnet-sdk-versions"
+tap "microsoft/mssql-release"
+tap "nikitabobko/tap"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.13"
+# Integrated shell for working with the AWS CLI
+brew "aws-shell"
+# Official Amazon AWS command-line interface
+brew "awscli"
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+# Modern, maintained replacement for ls
+brew "eza"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# Render markdown on the CLI
+brew "glow"
+# Lazier way to manage everything docker
+brew "lazydocker"
+# Simple terminal UI for git commands
+brew "lazygit"
+# Graphical front-end for GCC's coverage testing tool (gcov)
+brew "lcov"
+# Powerful, lightweight programming language
+brew "lua"
+# Fast, highly customisable system info script
+brew "neofetch"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Open-source, cross-platform JavaScript runtime environment
+brew "node"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Safe, concurrent, practical language
+brew "rust"
+# Cross-shell prompt for astronauts
+brew "starship"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# ODBC 3 connectivity for UNIX
+brew "unixodbc"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
+# Fish-like fast/unobtrusive autosuggestions for zsh
+brew "zsh-autosuggestions"
+# Fish shell like syntax highlighting for zsh
+brew "zsh-syntax-highlighting"
+# ODBC Driver for Microsoft(R) SQL Server(R)
+brew "microsoft/mssql-release/msodbcsql18"
+# Sqlcmd and Bcp for Microsoft(R) SQL Server(R)
+brew "microsoft/mssql-release/mssql-tools18"
+# AeroSpace is an i3-like tiling window manager for macOS
+cask "aerospace"
+# OpenAI's coding agent that runs in your terminal
+cask "codex"
+# This cask follows releases from https://github.com/dotnet/core/tree/master
+cask "dotnet-sdk6"
+# This cask follows releases from https://github.com/dotnet/core/tree/master
+cask "dotnet-sdk6-0-400"
+# This cask follows releases from https://github.com/dotnet/core/tree/master
+cask "dotnet-sdk8"
+# This cask follows releases from https://github.com/dotnet/core/tree/master
+cask "dotnet-sdk8-0-400"
+# Set of tools to manage resources and applications hosted on Google Cloud
+cask "gcloud-cli"
+# Command-line shell and scripting language
+cask "powershell"
