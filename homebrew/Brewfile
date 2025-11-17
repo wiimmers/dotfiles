@@ -17,8 +17,8 @@ brew "eza"
 brew "fd"
 # Command-line fuzzy finder written in Go
 brew "fzf"
-# Render markdown on the CLI
-brew "glow"
+# GNU compiler collection
+brew "gcc"
 # Lazier way to manage everything docker
 brew "lazydocker"
 # Simple terminal UI for git commands
@@ -69,3 +69,5 @@ cask "dotnet-sdk8-0-400"
 cask "gcloud-cli"
 # Command-line shell and scripting language
 cask "powershell"
+# GPU-accelerated cross-platform terminal emulator and multiplexer
+cask "wezterm"

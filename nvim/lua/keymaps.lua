@@ -21,6 +21,8 @@ vim.keymap.set("n", "<leader>dt", ":DapTerminate<cr>", { desc = "Terminate sessi
 -- QOL
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+vim.keymap.set("n", "o", "o<Esc>", { desc = "Insert new line below without entering insert mode" })
+vim.keymap.set("n", "O", "O<Esc>", { desc = "Insert new line above without entering insert mode" })
 
 -- Splits
 vim.keymap.set("n", "<leader>vv", "<C-w><C-v>", { desc = "Split vertically" })

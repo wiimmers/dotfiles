@@ -21,4 +21,12 @@ return {
 		{ "<leader>aa", "<cmd>ClaudeCodeDiffAccept<cr>", desc = "Accept diff" },
 		{ "<leader>ad", "<cmd>ClaudeCodeDiffDeny<cr>", desc = "Deny diff" },
 	},
+	opts = {
+		diff_opts = {
+			auto_close_on_accept = true,
+			vertical_split = false,
+			open_in_current_tab = false,
+			keep_terminal_focus = true,
+		},
+	},
 }
