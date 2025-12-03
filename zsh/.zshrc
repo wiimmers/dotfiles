@@ -7,4 +7,7 @@ source $ZDOTDIR/starship.zsh
 source $ZDOTDIR/title.zsh
 source $ZDOTDIR/vi.zsh
 source $ZDOTDIR/wez.zsh
+source $ZDOTDIR/rvm.zsh
+
 setopt autocd
+

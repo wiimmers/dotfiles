@@ -34,10 +34,10 @@ vim.o.inccommand = "split"
 vim.o.cursorline = true
 vim.o.scrolloff = 10
 vim.o.confirm = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = false
+vim.opt.listchars = { tab = "  ", trail = "·", nbsp = "␣" }
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
 vim.opt.termguicolors = true
 
 -- [[ Basic Autocommands ]]
