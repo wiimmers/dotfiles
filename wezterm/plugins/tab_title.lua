@@ -4,6 +4,7 @@ return function(wezterm)
 	local SOLID_LEFT_ARROW = wezterm.nerdfonts.pl_right_hard_divider
 
 	local ICONS = {
+		lg = "",
 		lazygit = "",
 		nvim = "",
 		zsh = "",
@@ -13,7 +14,7 @@ return function(wezterm)
 		brew = "",
 	}
 
-	wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+	wezterm.on("format-tab-title", function(tab, tabs, _, _, _, max_width)
 		local function tab_is_last()
 			if tab.tab_index == #tabs - 1 then
 				return true
@@ -80,7 +81,7 @@ return function(wezterm)
 			return tab_is_right_n(2)
 		end
 
-		local window = wezterm.truncate_left(tab.active_pane.title, 30)
+		local window = wezterm.truncate_left(tab.active_pane.title, max_width)
 		local title_text = ""
 		for key, icon in pairs(ICONS) do
 			if string.find(string.lower(window), key) then

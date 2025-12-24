@@ -11,6 +11,15 @@ return function(wezterm, config)
 	config.enable_tab_bar = true
 	config.tab_bar_at_bottom = true
 	config.use_fancy_tab_bar = false
-	config.tab_max_width = 32
+	config.tab_max_width = 1000
+
+	wezterm.on("window-focus-changed", function(window, _)
+		if window:is_focused() then
+			window:set_config_overrides({ enable_tab_bar = true })
+		else
+			window:set_config_overrides({ enable_tab_bar = false })
+		end
+	end)
+
 	return config
 end

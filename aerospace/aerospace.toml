@@ -21,12 +21,12 @@ automatically-unhide-macos-hidden-apps = true
     preset = 'qwerty'
 
 [gaps]
-    inner.horizontal = 15
-    inner.vertical =   15
-    outer.left =       25
-    outer.bottom =     25
-    outer.top =        25
-    outer.right =      25
+    inner.horizontal = 16
+    inner.vertical =   16
+    outer.left =       8
+    outer.bottom =     8
+    outer.top =        8
+    outer.right =      8
 
 [[on-window-detected]]
 	if.app-id = 'com.apple.finder'

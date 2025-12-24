@@ -143,17 +143,58 @@ return {
 				},
 
 				ts_ls = {
+					root_dir = function(fname)
+						local util = require("lspconfig.util")
+						-- Look for monorepo indicators first
+						local root = util.root_pattern("pnpm-workspace.yaml", "lerna.json", "nx.json")(fname)
+							or util.root_pattern("package.json", "tsconfig.json", "jsconfig.json")(fname)
+						return root
+					end,
+					single_file_support = false, -- Disable for structured projects
 					settings = {
 						typescript = {
+							inlayHints = {
+								includeInlayParameterNameHints = "all",
+								includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+								includeInlayFunctionParameterTypeHints = true,
+								includeInlayVariableTypeHints = true,
+								includeInlayPropertyDeclarationTypeHints = true,
+								includeInlayFunctionLikeReturnTypeHints = true,
+								includeInlayEnumMemberValueHints = true,
+							},
 							preferences = {
 								includePackageJsonAutoImports = "on",
+								importModuleSpecifierPreference = "relative",
+							},
+							-- Critical for monorepo stability:
+							tsserver = {
+								maxTsServerMemory = 8192, -- Increase if you have RAM
+								useSyntaxServer = "auto", -- Use lighter server when possible
 							},
 						},
 						javascript = {
 							preferences = {
 								includePackageJsonAutoImports = "on",
+								importModuleSpecifierPreference = "relative",
 							},
 						},
+					},
+					-- Additional handlers for better monorepo support
+					handlers = {
+						["textDocument/publishDiagnostics"] = function(...)
+							local params = select(2, ...)
+							-- Filter out excessive diagnostics that can cause slowdown
+							if params and params.diagnostics then
+								params.diagnostics = vim.tbl_filter(function(d)
+									-- You can add filters here if needed
+									return true
+								end, params.diagnostics)
+							end
+							vim.lsp.diagnostic.on_publish_diagnostics(...)
+						end,
+					},
+					flags = {
+						debounce_text_changes = 150, -- Reduce LSP updates during typing
 					},
 				},
 			}
@@ -167,11 +208,34 @@ return {
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
-			require("workspace-diagnostics").setup({})
+			require("workspace-diagnostics").setup({
+				workspace_files = function()
+					-- For TypeScript/JavaScript, find all relevant files
+					-- Adjust patterns based on your monorepo structure
+					return vim.fn.systemlist(
+						"fd -e ts -e tsx -e js -e jsx -e mts -e cts -e mjs -e cjs . " .. vim.fn.getcwd()
+					)
+				end,
+			})
 
 			local function on_attach(client, bufnr)
-				require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
+				-- Populate workspace diagnostics for TypeScript/JavaScript files
+				if client.name == "ts_ls" or client.name == "tsserver" then
+					require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
+				end
 			end
+
+			-- Add command to manually refresh workspace diagnostics
+			vim.api.nvim_create_user_command("WorkspaceDiagnosticsRefresh", function()
+				local clients = vim.lsp.get_clients()
+				for _, client in ipairs(clients) do
+					if client.name == "ts_ls" or client.name == "tsserver" then
+						local bufnr = vim.api.nvim_get_current_buf()
+						require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
+						print("Refreshing workspace diagnostics for " .. client.name)
+					end
+				end
+			end, { desc = "Refresh workspace diagnostics for all TypeScript projects" })
 			require("mason-lspconfig").setup({
 				ensure_installed = {},
 				automatic_installation = false,

@@ -40,6 +40,12 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.termguicolors = true
 
+-- [[ LSP Configuration ]]
+-- Limit file watching to prevent crashes in large monorepos
+vim.opt.maxmempattern = 5000
+-- Set LSP log level (change to "debug" if troubleshooting)
+vim.lsp.set_log_level("warn")
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -71,7 +77,7 @@ require("lazy").setup({
 	{ import = "plugins.colors" },
 	{ import = "plugins.comment" },
 	{ import = "plugins.completion" },
-	{ import = "plugins.copilot" },
+	-- { import = "plugins.copilot" },
 	{ import = "plugins.core" },
 	{ import = "plugins.colorizer" },
 	{ import = "plugins.dap" },
