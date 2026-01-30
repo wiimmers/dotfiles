@@ -1,0 +1,12 @@
+os:
+  edit: 'nvim {{filename}}'
+  editAtLine: 'nvim {{filename}} +{{line}}'
+customCommands:
+  - key: "C"
+    context: "files"
+    description: "Generate commit message with Claude Code"
+    command: |
+      MSG=$(git diff --staged | /opt/homebrew/bin/claude -p 'Generate a concise git commit message for these staged changes. Output ONLY the raw commit message with no markdown, no code blocks, no backticks, no explanations. Use conventional commit format.' --model haiku --output-format text)
+      git commit -e -m "$MSG"
+    loadingText: "Generating commit message..."
+    output: terminal

@@ -1,73 +1,50 @@
 tap "isen-ng/dotnet-sdk-versions"
 tap "microsoft/mssql-release"
 tap "nikitabobko/tap"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.13"
-# Integrated shell for working with the AWS CLI
+brew "autoconf"
+brew "automake"
 brew "aws-shell"
-# Official Amazon AWS command-line interface
+brew "python@3.13"
 brew "awscli"
-# Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
-# GNU File, Shell, and Text utilities
 brew "coreutils"
-# Modern, maintained replacement for ls
 brew "eza"
-# Simple, fast and user-friendly alternative to find
 brew "fd"
-# Command-line fuzzy finder written in Go
 brew "fzf"
-# GNU compiler collection
 brew "gcc"
-# Lazier way to manage everything docker
 brew "lazydocker"
-# Simple terminal UI for git commands
 brew "lazygit"
-# Graphical front-end for GCC's coverage testing tool (gcov)
 brew "lcov"
-# Powerful, lightweight programming language
+brew "libksba"
 brew "lua"
-# Fast, highly customisable system info script
 brew "neofetch"
-# Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
-# Open-source, cross-platform JavaScript runtime environment
+brew "ninja"
 brew "node"
-# Search tool like grep and The Silver Searcher
+brew "openssl@1.1"
+brew "pkgconf"
 brew "ripgrep"
-# Safe, concurrent, practical language
 brew "rust"
-# Cross-shell prompt for astronauts
 brew "starship"
-# Display directories as trees (with optional color/HTML output)
 brew "tree"
-# ODBC 3 connectivity for UNIX
 brew "unixodbc"
-# Shell extension to navigate your filesystem faster
+brew "zlib"
 brew "zoxide"
-# Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
-# Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
-# ODBC Driver for Microsoft(R) SQL Server(R)
 brew "microsoft/mssql-release/msodbcsql18"
-# Sqlcmd and Bcp for Microsoft(R) SQL Server(R)
 brew "microsoft/mssql-release/mssql-tools18"
-# AeroSpace is an i3-like tiling window manager for macOS
-cask "aerospace"
-# OpenAI's coding agent that runs in your terminal
+cask "nikitabobko/tap/aerospace"
+cask "bitwarden"
+cask "claude-code"
 cask "codex"
-# This cask follows releases from https://github.com/dotnet/core/tree/master
-cask "dotnet-sdk6"
-# This cask follows releases from https://github.com/dotnet/core/tree/master
-cask "dotnet-sdk6-0-400"
-# This cask follows releases from https://github.com/dotnet/core/tree/master
-cask "dotnet-sdk8"
-# This cask follows releases from https://github.com/dotnet/core/tree/master
-cask "dotnet-sdk8-0-400"
-# Set of tools to manage resources and applications hosted on Google Cloud
+cask "isen-ng/dotnet-sdk-versions/dotnet-sdk6"
+cask "isen-ng/dotnet-sdk-versions/dotnet-sdk6-0-400"
+cask "isen-ng/dotnet-sdk-versions/dotnet-sdk8"
+cask "isen-ng/dotnet-sdk-versions/dotnet-sdk8-0-400"
+cask "font-atkinson-hyperlegible-next"
+cask "font-atkynson-mono-nerd-font"
 cask "gcloud-cli"
-# Command-line shell and scripting language
 cask "powershell"
-# GPU-accelerated cross-platform terminal emulator and multiplexer
+cask "spotify"
 cask "wezterm"

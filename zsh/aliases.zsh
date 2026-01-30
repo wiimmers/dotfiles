@@ -30,7 +30,7 @@ alias gcptest="gcloud config set project docpipeline-qa-wvxz"
 eval "$(zoxide init zsh)"
 
 alias activate="source ./.venv/bin/activate 2>/dev/null || source ./venv/bin/activate 2>/dev/null"
-alias brewski='brew update && brew upgrade && brew cleanup'
+alias brewski='brew update && brew upgrade && brew cleanup && brew bundle dump --global --force'
 alias brewdir='cd /opt/homebrew/'
 alias cd="z"
 alias dotfiles="nvim ~/dotfiles"
