@@ -7,3 +7,7 @@
 	autoSetupRemote = true
 [merge]
 	tool = nvimdiff
+[difftool "oy"]
+	cmd = oy \"$LOCAL\" \"$REMOTE\"
+[diff]
+	tool = oy

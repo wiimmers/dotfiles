@@ -5,56 +5,19 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.g.have_nerd_font = true
 
--- Sync clipboard between OS and Neovim.
---  Schedule the setting after `UiEnter` because it can increase startup-time.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
-vim.schedule(function()
-	vim.o.clipboard = "unnamedplus"
-end)
+-- [[ Language Server Configuration ]]
+-- Toggle language support by setting to true/false
+LSP_LANGUAGES = {
+	typescript = true,
+	python = true,
+	lua = true,
+	terraform = true,
+	rust = true,
+}
 
--- [[ Setting options ]]
--- See `:help vim.o`
-vim.o.number = true
-vim.o.relativenumber = true
-vim.o.mouse = "a"
-vim.o.showmode = false
-vim.o.breakindent = true
-vim.o.smartindent = false
-vim.o.undofile = true
-vim.o.ignorecase = true
-vim.o.smartcase = true
-vim.o.signcolumn = "yes"
-vim.o.updatetime = 250
-vim.o.timeoutlen = 300
-vim.o.splitright = true
-vim.o.splitbelow = true
-vim.o.list = true
-vim.o.inccommand = "split"
-vim.o.cursorline = true
-vim.o.scrolloff = 10
-vim.o.confirm = true
-vim.opt.listchars = { tab = "  ", trail = "·", nbsp = "␣" }
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
-vim.opt.termguicolors = true
-
--- [[ LSP Configuration ]]
--- Limit file watching to prevent crashes in large monorepos
-vim.opt.maxmempattern = 5000
--- Set LSP log level (change to "debug" if troubleshooting)
-vim.lsp.set_log_level("warn")
-
--- [[ Basic Autocommands ]]
---  See `:help lua-guide-autocommands`
-vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "Highlight when yanking (copying) text",
-	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-	callback = function()
-		vim.hl.on_yank()
-	end,
-})
+-- Load configuration modules
+require("config.options")
+require("config.autocmds")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -72,20 +35,7 @@ rtp:prepend(lazypath)
 -- [[ Configure and install plugins ]]
 require("keymaps")
 require("lazy").setup({
-	{ import = "plugins.bufdelete" },
-	{ import = "plugins.claude" },
-	{ import = "plugins.colors" },
-	{ import = "plugins.comment" },
-	{ import = "plugins.completion" },
-	-- { import = "plugins.copilot" },
-	{ import = "plugins.core" },
-	{ import = "plugins.colorizer" },
-	{ import = "plugins.dap" },
-	{ import = "plugins.formatting" },
-	{ import = "plugins.git" },
-	{ import = "plugins.lsp" },
-	{ import = "plugins.ui" },
-	{ import = "plugins.gemini" },
+	{ import = "plugins" },
 }, {
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the

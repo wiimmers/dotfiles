@@ -30,7 +30,7 @@ alias gcptest="gcloud config set project docpipeline-qa-wvxz"
 eval "$(zoxide init zsh)"
 
 alias activate="source ./.venv/bin/activate 2>/dev/null || source ./venv/bin/activate 2>/dev/null"
-alias brewski='brew update && brew upgrade && brew cleanup && brew bundle dump --global --force'
+alias brewski='brew update -v && brew upgrade -v && brew cleanup -v && brew bundle dump --describe --global --force -v && ~/dotfiles/macos/remove-font-quarantine.sh && brew doctor'
 alias brewdir='cd /opt/homebrew/'
 alias cd="z"
 alias dotfiles="nvim ~/dotfiles"
