@@ -11,13 +11,13 @@ $python\
 $character"""
 
 [directory]
-style = "#9ccfd8"
+style = "#E6C384"
 truncation_length = 0
 
 [character]
-success_symbol = "[❯](#c4a7e7)"
-error_symbol = "[❯](#eb6f92)"
-vimcmd_symbol = "[❮](#3e8fb0)"
+success_symbol = "[❯](#E6C384)"
+error_symbol = "[❯](#E82424)"
+vimcmd_symbol = "[❮](#E6C384)"
 
 [git_branch]
 format = "[$branch]($style)"
@@ -25,7 +25,7 @@ style = "#908caa"
 
 [git_status]
 format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](#ea9a97) ($ahead_behind$stashed)]($style)"
-style = "#9ccfd8"
+style = "#98BB6C"
 conflicted = "​"
 untracked = "​"
 modified = "​"
@@ -40,11 +40,11 @@ style = "#908caa"
 
 [cmd_duration]
 format = " [$duration]($style) "
-style = "#f6c177"
+style = "#E6C384"
 
 [python]
 format = "[$virtualenv]($style) "
-style = "#3e8fb0"
+style = "#98BB6C"
 detect_extensions = []
 detect_files = []
 

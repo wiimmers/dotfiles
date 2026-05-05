@@ -1,7 +1,6 @@
 os:
-  edit: 'nvim {{filename}}'
-  editAtLine: 'nvim {{filename}} +{{line}}'
-  openLink: 'open -a "GitLab" {{link}}'
+  edit: "nvim {{filename}}"
+  editAtLine: "nvim {{filename}} +{{line}}"
 customCommands:
   - key: "C"
     context: "files"

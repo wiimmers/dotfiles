@@ -1,11 +1,12 @@
 return {
 	tab_bar_background = "#313244",
+	white = "#DCD7BA",
 
-	iris_light = "#c4a7e7",
-	iris_med = "#ab91c9",
-	iris_dark = "#907aa9",
+	tab_dark = "#938056",
+	tab_med = "#C0A36E",
+	tab_light = "#E6C384",
 
-	rose_light = "#ebbcba",
-	rose_med = "#ea9a97",
-	rose_dark = "#d7827e",
+	clock_light = "#2B3328",
+	clock_med = "#98BB6C",
+	clock_dark = "#76946A",
 }

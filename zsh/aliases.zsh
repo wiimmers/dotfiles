@@ -23,9 +23,9 @@ alias purge-svc="cd ~/dpp/document-pipeline/microservices/purge-svc/"
 alias translation-svc="cd ~/dpp/document-pipeline/microservices/translation-svc/"
 alias validation-svc="cd ~/dpp/document-pipeline/microservices/validation-svc/"
 alias legtest="dotnet test -c Development -e GOOGLE_APPLICATION_CREDENTIALS=/Users/wimmersn/qa-automation/dev-gccredmain.json"
-alias gcpdev="gcloud config set project docpipeline-dev-a8a5"
-alias gcpqa="gcloud config set project docpipeline-qa-eauz"
-alias gcptest="gcloud config set project docpipeline-qa-wvxz"
+alias gcpdev="gcloud config set project docpipeline-dev-a8a5 && gcloud auth application-default set-quota-project docpipeline-dev-a8a5"
+alias gcpqa="gcloud config set project docpipeline-qa-eauz && gcloud auth application-default set-quota-project docpipeline-qa-eauz"
+alias gcptest="gcloud config set project docpipeline-qa-wvxz && gcloud auth application-default set-quota-project docpipeline-qa-wvxz"
 
 eval "$(zoxide init zsh)"
 

@@ -7,6 +7,7 @@ return {
 		{ "j-hui/fidget.nvim", opts = {} },
 		"saghen/blink.cmp",
 		"artemave/workspace-diagnostics.nvim",
+		"SmiteshP/nvim-navic",
 	},
 	config = function()
 		-- Load shared LSP configuration

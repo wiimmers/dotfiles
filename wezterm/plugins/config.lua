@@ -4,7 +4,7 @@ return function(wezterm, config)
 
 	config.font_size = 14
 	config.font = wezterm.font({ family = "AtkynsonMono Nerd Font" })
-	config.color_scheme = "rose-pine-moon"
+	config.color_scheme = "Kanagawa (Gogh)"
 	config.window_decorations = "RESIZE"
 	config.colors = { selection_bg = "rgba(144 213 255 10%)", selection_fg = "none" }
 

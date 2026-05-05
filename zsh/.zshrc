@@ -9,5 +9,10 @@ source $ZDOTDIR/vi.zsh
 source $ZDOTDIR/wez.zsh
 source $ZDOTDIR/rvm.zsh
 
+export NVM_DIR="$XDG_CONFIG_HOME/nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+
+
 setopt autocd
 

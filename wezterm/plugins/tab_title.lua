@@ -94,101 +94,101 @@ return function(wezterm)
 
 		if tab.is_active and not tab_is_last() and not tab_is_first() then
 			return {
-				{ Background = { Color = colors.iris_med } },
-				{ Foreground = { Color = colors.iris_light } },
+				{ Background = { Color = colors.tab_med } },
+				{ Foreground = { Color = colors.tab_light } },
 				{ Text = SOLID_LEFT_ARROW },
-				{ Background = { Color = colors.iris_light } },
+				{ Background = { Color = colors.tab_light } },
 				{ Foreground = { Color = colors.tab_bar_background } },
 				{ Text = " " .. title_text .. " " },
-				{ Background = { Color = colors.iris_med } },
-				{ Foreground = { Color = colors.iris_light } },
+				{ Background = { Color = colors.tab_med } },
+				{ Foreground = { Color = colors.tab_light } },
 				{ Text = SOLID_RIGHT_ARROW },
 			}
 		elseif tab.is_active and not tab_is_last() and tab_is_first() then
 			return {
-				{ Background = { Color = colors.iris_light } },
+				{ Background = { Color = colors.tab_light } },
 				{ Foreground = { Color = colors.tab_bar_background } },
 				{ Text = " " .. title_text .. " " },
-				{ Background = { Color = colors.iris_med } },
-				{ Foreground = { Color = colors.iris_light } },
+				{ Background = { Color = colors.tab_med } },
+				{ Foreground = { Color = colors.tab_light } },
 				{ Text = SOLID_RIGHT_ARROW },
 			}
 		elseif tab.is_active and tab_is_only_tab() then
 			return {
-				{ Background = { Color = colors.iris_light } },
+				{ Background = { Color = colors.tab_light } },
 				{ Foreground = { Color = colors.tab_bar_background } },
 				{ Text = " " .. title_text .. " " },
 				{ Background = { Color = colors.tab_bar_background } },
-				{ Foreground = { Color = colors.iris_light } },
+				{ Foreground = { Color = colors.tab_light } },
 				{ Text = SOLID_RIGHT_ARROW },
 			}
 		elseif tab_is_left_one() and not tab_is_first() then
 			return {
-				{ Background = { Color = colors.iris_dark } },
-				{ Foreground = { Color = colors.iris_med } },
+				{ Background = { Color = colors.tab_dark } },
+				{ Foreground = { Color = colors.tab_med } },
 				{ Text = SOLID_LEFT_ARROW },
-				{ Background = { Color = colors.iris_med } },
+				{ Background = { Color = colors.tab_med } },
 				{ Foreground = { Color = colors.tab_bar_background } },
 				{ Text = " " .. tab.tab_index + 1 .. " " },
 			}
 		elseif tab_is_left_two() then
 			return {
 				{ Background = { Color = colors.tab_bar_background } },
-				{ Foreground = { Color = colors.iris_dark } },
+				{ Foreground = { Color = colors.tab_dark } },
 				{ Text = SOLID_LEFT_ARROW },
-				{ Background = { Color = colors.iris_dark } },
+				{ Background = { Color = colors.tab_dark } },
 				{ Foreground = { Color = colors.tab_bar_background } },
 				{ Text = " " .. tab.tab_index + 1 .. " " },
 			}
 		elseif tab_is_right_one() and not tab_is_last() then
 			return {
-				{ Background = { Color = colors.iris_med } },
+				{ Background = { Color = colors.tab_med } },
 				{ Foreground = { Color = colors.tab_bar_background } },
 				{ Text = " " .. tab.tab_index + 1 .. " " },
-				{ Background = { Color = colors.iris_dark } },
-				{ Foreground = { Color = colors.iris_med } },
+				{ Background = { Color = colors.tab_dark } },
+				{ Foreground = { Color = colors.tab_med } },
 				{ Text = SOLID_RIGHT_ARROW },
 			}
 		elseif tab_is_right_two() then
 			return {
-				{ Background = { Color = colors.iris_dark } },
+				{ Background = { Color = colors.tab_dark } },
 				{ Foreground = { Color = colors.tab_bar_background } },
 				{ Text = " " .. tab.tab_index + 1 .. " " },
 				{ Background = { Color = colors.tab_bar_background } },
-				{ Foreground = { Color = colors.iris_dark } },
+				{ Foreground = { Color = colors.tab_dark } },
 				{ Text = SOLID_RIGHT_ARROW },
 			}
 		elseif tab.is_active and tab_is_last() then
 			return {
-				{ Background = { Color = colors.iris_med } },
-				{ Foreground = { Color = colors.iris_light } },
+				{ Background = { Color = colors.tab_med } },
+				{ Foreground = { Color = colors.tab_light } },
 				{ Text = SOLID_LEFT_ARROW },
-				{ Background = { Color = colors.iris_light } },
+				{ Background = { Color = colors.tab_light } },
 				{ Foreground = { Color = colors.tab_bar_background } },
 				{ Text = " " .. title_text .. " " },
 				{ Background = { Color = colors.tab_bar_background } },
-				{ Foreground = { Color = colors.iris_light } },
+				{ Foreground = { Color = colors.tab_light } },
 				{ Text = SOLID_RIGHT_ARROW },
 			}
 		elseif tab_is_right_one() and tab_is_last() then
 			return {
-				{ Background = { Color = colors.iris_med } },
+				{ Background = { Color = colors.tab_med } },
 				{ Foreground = { Color = colors.tab_bar_background } },
 				{ Text = " " .. tab.tab_index + 1 .. " " },
 				{ Background = { Color = colors.tab_bar_background } },
-				{ Foreground = { Color = colors.iris_med } },
+				{ Foreground = { Color = colors.tab_med } },
 				{ Text = SOLID_RIGHT_ARROW },
 			}
 		elseif tab_is_first() and tab_is_left_one() then
 			return {
-				{ Background = { Color = colors.iris_med } },
+				{ Background = { Color = colors.tab_med } },
 				{ Foreground = { Color = colors.tab_bar_background } },
 				{ Text = " " .. tab.tab_index + 1 .. " " },
 			}
 		else
 			return {
 				{ Background = { Color = colors.tab_bar_background } },
-				{ Foreground = { Color = colors.iris_light } },
+				{ Foreground = { Color = colors.tab_light } },
 				{ Text = " " .. tab.tab_index + 1 .. " " },
 			}
 		end

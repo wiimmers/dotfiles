@@ -27,6 +27,7 @@ vim.o.inccommand = "split"
 vim.o.cursorline = true
 vim.o.scrolloff = 10
 vim.o.confirm = true
+vim.o.laststatus = 3
 vim.opt.listchars = { tab = "  ", trail = "·", nbsp = "␣" }
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
@@ -37,4 +38,4 @@ vim.opt.termguicolors = true
 -- Limit file watching to prevent crashes in large monorepos
 vim.opt.maxmempattern = 5000
 -- Set LSP log level (change to "debug" if troubleshooting)
-vim.lsp.set_log_level("warn")
+vim.lsp.log.set_level("warn")
