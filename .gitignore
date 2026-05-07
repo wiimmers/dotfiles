@@ -1,3 +1,4 @@
+.coco
 .dpp
 .cloudsmith
 .zhistory
@@ -6,3 +7,5 @@
 github-copilot
 nvm/
 *.env
+
+.logs/

@@ -55,6 +55,8 @@ brew "rust"
 brew "starship"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Parser generator tool
+brew "tree-sitter-cli"
 # ODBC 3 connectivity for UNIX
 brew "unixodbc"
 # General-purpose lossless data-compression library
@@ -73,8 +75,6 @@ brew "hashicorp/tap/terraform"
 cask "nikitabobko/tap/aerospace"
 # Desktop password and login vault
 cask "bitwarden"
-# Terminal-based AI coding assistant
-cask "claude-code"
 cask "font-atkynson-mono-nerd-font"
 # Set of tools to manage resources and applications hosted on Google Cloud
 cask "gcloud-cli"

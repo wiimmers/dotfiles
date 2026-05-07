@@ -16,3 +16,5 @@ export NVM_DIR="$XDG_CONFIG_HOME/nvm"
 
 setopt autocd
 
+# ClaudeCode
+export PATH=$PATH:$HOME/.local/bin

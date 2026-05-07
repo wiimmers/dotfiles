@@ -11,6 +11,7 @@ return {
 			end,
 		})
 		local ensureInstalled = {
+			"bash",
 			"javascript",
 			"json",
 			"lua",
@@ -19,6 +20,8 @@ return {
 			"rust",
 			"toml",
 			"typescript",
+			"yaml",
+			"ini",
 		}
 		local alreadyInstalled = require("nvim-treesitter.config").get_installed()
 		local parsersToInstall = vim.iter(ensureInstalled)

@@ -2,6 +2,9 @@
 source $ZDOTDIR/.dpp
 source $ZDOTDIR/.cloudsmith
 
+# ConstructConnect Environment Variables
+source $ZDOTDIR/.coco
+
 # Package managers configuration
 export PIP_CONFIG_FILE=$XDG_CONFIG_HOME/pip/pip.conf
 export PNPM_HOME=/opt/homebrew/bin
